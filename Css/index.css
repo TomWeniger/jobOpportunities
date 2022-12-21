@@ -1,0 +1,156 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+
+header{
+    background-color: #070606;
+}
+
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+
+li{
+    list-style-type: none;
+    margin: 1em;
+    
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a:hover{
+color:#FFD700;
+}
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  display:none;
+
+}
+.menu-btn__burger {
+  width: 50px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before {
+  transform: translateY(-16px);
+}
+.menu-btn__burger::after {
+  transform: translateY(16px);
+}
+/* Animation  Hamburger*/
+
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.display-active{
+
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  text-align: center;
+
+}
+
+/* Body */
+
+
+.title-img{
+  height:400px;
+  width:100%;
+  border-radius:0;
+}
+
+img{
+  height:370px;
+  width:100%;
+  border-radius:15px;
+}
+
+.container{
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item{
+  padding: 45px;
+  width:25%;
+  height:300px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+.article-title {
+  font-size: 1.3em;
+  padding: 5px 0;
+  text-align: center;
+}
+
+
+/* Mobile */
+
+  @media (max-width: 600px){
+    .menu-btn{
+      display:flex;
+    }
+   
+    nav {
+      display:none;
+    }
+
+
+    .item{
+      width:100%;
+      height:50%;
+      padding: 30px 30px;
+    }
+
+  }
+
